@@ -1,14 +1,16 @@
 @startuml
-[*] --> Registrado
+title Diagrama de Estados - Pasajero
 
-Registrado --> PlanificandoViaje : Selecciona ruta
+[*] --> PlanificaViaje : Selecciona ruta y horario
+PlanificaViaje --> SeDirigeALaParada : Camina hacia la parada
+SeDirigeALaParada --> EsperaEnParada : Llega a la parada
+EsperaEnParada --> SubeAlBus : Llega el bus y aborda
 
-PlanificandoViaje --> EnViaje : Viaje iniciado
+SubeAlBus --> PagaTarifa : Valida la tarjeta o paga en efectivo
+PagaTarifa --> ViajaEnBus : Busca asiento o espacio disponible
+ViajaEnBus --> SaleEnParadaDeseada : Llega a la parada deseada y desciende
 
-EnViaje --> LlegadoADestino : Viaje completado
-
-EnViaje --> Cancelado : Viaje cancelado
-
-LlegadoADestino --> Registrado : Listo para un nuevo viaje
+SaleEnParadaDeseada --> [*] : Finaliza el viaje
+SaleEnParadaDeseada --> PlanificaViaje : Inicia planificación de un nuevo viaje
 
 @enduml

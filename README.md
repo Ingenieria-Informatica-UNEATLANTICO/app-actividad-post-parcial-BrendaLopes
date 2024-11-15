@@ -60,10 +60,10 @@ Aquí se presentan las fotos de las hojas originales del examen en las que se di
 | Diagrama Mejorado | Código PlantUML |
 |--------------------|------------------|
 | ![Diagrama de Clases Mejorado](images/modelosUML/DdC_Mejorado.svg) | [Ver código](modelosUML/DdC_Mejorado.puml) |
-| ![Diagrama de Objetos Original](images/modelosUML/DdO_Original.svg) | [Ver código](modelosUML/DdO_Original.puml) |
-| ![Diagrama de Estados Pasajero Original](images/modelosUML/DdE_Pasajero_Original.svg) | [Ver código](modelosUML/DdE_Pasajero_Original.puml) |
-| ![Diagrama de Estados Conductor Original](images/modelosUML/DdE_Conductor_Original.svg) | [Ver código](modelosUML/DdE_Conductor_Original.puml) |
-| ![Diagrama de Estados Vehiculo Original](images/modelosUML/DdE_Vehiculo_Original.svg) | [Ver código](modelosUML/DdE_Vehiculo_Original.puml) 
+| ![Diagrama de Objetos Mejorado](images/modelosUML/DdO_Mejorado.svg) | [Ver código](modelosUML/DdO_Mejorado.puml) |
+| ![Diagrama de Estados Pasajero Mejorado](images/modelosUML/DdE_Pasajero_Mejorado.svg) | [Ver código](modelosUML/DdE_Pasajero_Mejorado.puml) |
+| ![Diagrama de Estados Conductor Mejorado](images/modelosUML/DdE_Conductor_Mejorado.svg) | [Ver código](modelosUML/DdE_Conductor_Mejorado.puml) |
+| ![Diagrama de Estados Vehiculo Mejorado](images/modelosUML/DdE_Vehiculo_Mejorado.svg) | [Ver código](modelosUML/DdE_Vehiculo_Mejorado.puml) 
 
 ---
 

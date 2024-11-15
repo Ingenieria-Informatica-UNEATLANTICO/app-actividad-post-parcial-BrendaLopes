@@ -1,16 +1,16 @@
 @startuml
 title Diagrama de Estados - Pasajero
 
-[*] --> PlanificaViaje : Selecciona ruta y horario
-PlanificaViaje --> SeDirigeALaParada : Camina hacia la parada
-SeDirigeALaParada --> EsperaEnParada : Llega a la parada
-EsperaEnParada --> SubeAlBus : Llega el bus y aborda
+[*] --> EsperaEnParada
 
-SubeAlBus --> PagaTarifa : Valida la tarjeta o paga en efectivo
-PagaTarifa --> ViajaEnBus : Busca asiento o espacio disponible
-ViajaEnBus --> SaleEnParadaDeseada : Llega a la parada deseada y desciende
+EsperaEnParada --> SubeAlBus 
 
-SaleEnParadaDeseada --> [*] : Finaliza el viaje
-SaleEnParadaDeseada --> PlanificaViaje : Inicia planificación de un nuevo viaje
+SubeAlBus --> PagaTarifa 
+
+PagaTarifa --> SaleEnParadaDeseada 
+
+SaleEnParadaDeseada --> EsperaEnParada
+
+SaleEnParadaDeseada --> [*]
 
 @enduml
