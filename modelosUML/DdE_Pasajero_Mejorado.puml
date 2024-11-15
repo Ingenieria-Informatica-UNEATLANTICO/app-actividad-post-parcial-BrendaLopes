@@ -1,0 +1,14 @@
+@startuml
+[*] --> Registrado
+
+Registrado --> PlanificandoViaje : Selecciona ruta
+
+PlanificandoViaje --> EnViaje : Viaje iniciado
+
+EnViaje --> LlegadoADestino : Viaje completado
+
+EnViaje --> Cancelado : Viaje cancelado
+
+LlegadoADestino --> Registrado : Listo para un nuevo viaje
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+title Diagrama de Estados - Conductor
+
+[*] --> SeReportaAlTrabajo : Inicia turno
+SeReportaAlTrabajo --> RealizaInspeccionInicial : Verifica condiciones del vehículo
+RealizaInspeccionInicial --> EsperaAsignacion : Turno disponible
+EsperaAsignacion --> RecibeRutaAsignada : Ruta asignada por el sistema
+
+RecibeRutaAsignada --> SubeAlBus : Aborda el vehículo
+SubeAlBus --> VerificaBus : Comprueba condiciones operativas
+VerificaBus --> IniciaRuta : Se prepara para iniciar el trayecto
+
+IniciaRuta --> ConducePorRuta : Realiza recorrido programado
+ConducePorRuta --> AtiendeIncidencia : Surge una incidencia
+AtiendeIncidencia --> ConducePorRuta : Incidencia resuelta
+ConducePorRuta --> CompletaRuta : Finaliza el recorrido
+
+CompletaRuta --> VuelveAEstacion : Retorna el vehículo a la base
+VuelveAEstacion --> RealizaInspeccionFinal : Reporta estado del vehículo
+RealizaInspeccionFinal --> [*] : Finaliza turno
+
+@enduml
