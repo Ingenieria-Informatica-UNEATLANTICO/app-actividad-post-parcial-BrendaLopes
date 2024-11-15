@@ -1,0 +1,73 @@
+@startuml
+
+class Servicio {
+}
+
+class Persona {
+}
+
+class Pasajero {
+}
+
+class Conductor {
+}
+
+class SistemaDePago {
+}
+
+class Tarifa {
+}
+
+class Abono {
+}
+
+class Flota {
+}
+
+class Vehiculo {
+}
+
+class Ruta {
+}
+
+class Parada {
+}
+
+class Horario {
+}
+
+class GestionDeIncidencias {
+}
+
+class Incidencia {
+}
+
+
+Servicio --> Persona : tiene
+Servicio --> SistemaDePago 
+Servicio --> Flota : tiene
+Servicio --> GestionDeIncidencias
+
+Persona -- Pasajero
+Persona -- Conductor
+
+Pasajero --> Vehiculo : usa
+Conductor --> Vehiculo : conduce
+
+SistemaDePago --> Flota 
+SistemaDePago --> Tarifa : establece
+SistemaDePago --> Abono : contiene
+
+Abono -- Tarifa
+
+Flota --> Vehiculo : tiene
+
+Vehiculo --> Ruta : tiene
+
+Ruta --> Parada : tiene
+Ruta --> Horario : tiene
+
+GestionDeIncidencias --> Incidencia
+
+@enduml
+
