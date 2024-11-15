@@ -68,6 +68,7 @@ Ruta --> Parada : tiene
 Ruta --> Horario : tiene
 
 GestionDeIncidencias --> Incidencia
+Incidencia --> Vehiculo
 
 @enduml
 
