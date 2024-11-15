@@ -1,0 +1,16 @@
+@startuml
+title Diagrama de Estados - Pasajero
+
+[*] --> EsperaEnParada
+
+EsperaEnParada --> SubeAlBus 
+
+SubeAlBus --> PagaTarifa 
+
+PagaTarifa --> SaleEnParadaDeseada 
+
+SaleEnParadaDeseada --> EsperaEnParada
+
+SaleEnParadaDeseada --> [*]
+
+@enduml

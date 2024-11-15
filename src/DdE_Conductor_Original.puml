@@ -1,0 +1,15 @@
+@startuml
+title Diagrama de Estados - Conductor
+[*] --> SubeAlBus
+
+SubeAlBus --> VerificaBus 
+
+VerificaBus --> AsignaRuta 
+
+AsignaRuta --> ConducePorRuta 
+
+ConducePorRuta --> VuelveAEstacion 
+
+VuelveAEstacion --> [*]
+
+@enduml
