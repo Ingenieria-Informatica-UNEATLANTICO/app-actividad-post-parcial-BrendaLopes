@@ -1,0 +1,99 @@
+@startuml
+
+object Servicio {
+    nombre = "Servicio de Transporte Urbano"
+}
+
+object Pasajero {
+    nombre = "Juan Pérez"
+}
+
+object Conductor{
+    nombre = "María López"
+}
+
+object SistemaDePago {
+    nombre = "Sistema TUS"
+}
+
+object Tarifa {
+    tipo = "Tarifa Normal"
+    precio = "0.6€"
+}
+
+object Abono {
+    tipo = "Abono Mensual"
+    precio = "25€"
+}
+
+object Flota {
+    nombre = "Flota de Buses"
+}
+
+object Vehiculo {
+    id = "Bus123"
+    tipo = "Eléctrico"
+}
+
+object Ruta {
+    nombre = "Ruta 24C1"
+}
+
+object Parada1 {
+    nombre = "Parada Centro"
+}
+
+object Parada2 {
+    nombre = "Parada Estación"
+}
+
+object Horario {
+    tipo = "Horario de Verano"
+    horaSalida = "07:00"
+    horaLlegada = "22:00"
+}
+
+object GestionDeIncidencias {
+    nombre = "Gestor de Incidencias"
+}
+
+object Incidencia {
+    tipo = "Avería en el motor"
+    estado = "En reparación"
+}
+
+object Viaje {
+    fecha = "2024-11-15"
+    horaInicio = "08:30"
+    estado = "En curso"
+}
+
+Servicio --> Pasajero : tiene
+Servicio --> Conductor : tiene
+Servicio --> SistemaDePago
+Servicio --> Flota
+Servicio --> GestionDeIncidencias
+
+Pasajero --> Viaje : realiza
+Conductor --> Vehiculo : conduce
+
+Viaje --> Vehiculo : usa
+Viaje --> Ruta : sigue
+Viaje --> Horario : programadoEn
+
+SistemaDePago --> Tarifa
+SistemaDePago --> Abono
+
+Flota --> Vehiculo
+
+Vehiculo --> Ruta : asignadoA
+Ruta --> Parada1 : incluye
+Ruta --> Parada2 : incluye
+Ruta --> Horario : contiene
+
+GestionDeIncidencias --> Incidencia
+Incidencia --> Vehiculo : afecta
+Incidencia --> Ruta : impacta
+Incidencia --> Conductor : reportadaPor
+
+@enduml

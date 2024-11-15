@@ -1,0 +1,69 @@
+@startuml
+
+object Servicio {
+    nombre = "Transporte Urbano Santander"
+}
+
+object SistemaDePago {
+    nombre = "Tarjeta TUS"
+}
+
+object Tarifa {
+    tipo = "Tarifa Normal"
+    precio = "0.6€"
+}
+
+object Pasajero {
+    nombre = "Brenda"
+}
+
+object Flota {
+    nombre = "Buses"
+}
+
+object Conductor {
+    nombre = "Marcos"
+}
+
+object Vehiculo {
+    nombre = "Bus1427"
+    tipo = "Eléctrico"
+}
+
+object Ruta {
+    nombre = "24C1"
+}
+
+object Parada {
+    nombre = "PCTCan"
+}
+
+object Horario {
+    tipo = "Horario Verano"
+    horaSalida = "7:00"
+    horaLlegada = "23:00"
+}
+
+object Incidencia {
+    nombre = "Calle Cerrada"
+    consecuencia = "Cambio de Ruta"
+}
+
+Servicio --> SistemaDePago
+Servicio --> Flota
+Servicio --> Incidencia
+Servicio --> Pasajero
+Servicio --> Conductor
+
+SistemaDePago --> Tarifa
+Pasajero --> Tarifa
+
+Flota --> Vehiculo
+Conductor --> Vehiculo
+Incidencia --> Vehiculo
+
+Vehiculo --> Ruta
+Ruta --> Parada
+Ruta --> Horario
+
+@enduml

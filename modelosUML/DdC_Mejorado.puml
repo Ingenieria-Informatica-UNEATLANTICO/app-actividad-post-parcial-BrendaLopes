@@ -1,0 +1,78 @@
+class Servicio {
+}
+
+class Persona {
+}
+
+class Pasajero {
+}
+
+class Conductor {
+}
+
+class SistemaDePago {
+}
+
+class FormaDePago {
+}
+
+class Tarifa {
+}
+
+class Abono {
+}
+
+class Flota {
+}
+
+class Vehiculo {
+}
+
+class Ruta {
+}
+
+class Parada {
+}
+
+
+class Horario {
+}
+
+class GestionDeIncidencias {
+}
+
+class Incidencia {
+}
+
+class Viaje {
+}
+
+Servicio --> Persona : tiene
+Servicio --> SistemaDePago 
+Servicio --> Flota : tiene
+Servicio --> GestionDeIncidencias
+
+Persona -- Pasajero
+Persona -- Conductor
+
+Pasajero --> Viaje : realiza
+Conductor --> Vehiculo : conduce
+
+Viaje --> Vehiculo : usa
+Viaje --> Ruta : sigue
+Viaje --> Horario : programadoEn
+
+SistemaDePago --> FormaDePago : acepta
+FormaDePago <|-- Tarifa
+FormaDePago <|-- Abono
+
+Flota --> Vehiculo : contiene
+
+Vehiculo --> Ruta : asignadoA
+Ruta --> Parada : incluye
+Ruta --> Horario : contiene
+
+GestionDeIncidencias --> Incidencia
+Incidencia --> Vehiculo : afecta
+Incidencia --> Ruta : impacta
+Incidencia --> Conductor : reportadaPor

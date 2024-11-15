@@ -1,53 +1,70 @@
-# Repo plantilla para exámenes [PRG*x*|EDA*x*|IDSW*x*]@gII.uneatlantico
+# Sistema de Transporte Público - Modelo de Dominio
 
-*Este documento es una guía para la realización y entrega de las evaluaciones en las asignaturas PRGx, EDAx e IDSWx del Grado en Ingeniería Informática. Detalla la estructura del repositorio de entrega, los artefactos requeridos y los criterios de evaluación.*
 
-## Enunciado del examen
+## Descripción del Sistema
 
-En el repo de la asignatura, carpeta `/evaluaciones`, apartado del examen correspondiente.
+El sistema combina los elementos necesarios para gestionar pasajeros, conductores, vehículos, rutas, horarios, tarifas y el manejo de incidencias. Se centra en la interacción entre estos componentes para ofrecer un servicio funcional y seguro.
 
-### Retos
+- **Servicio:** Es el componente central que coordina todos los elementos clave, como las personas involucradas (pasajeros y conductores), la flota de vehículos, el sistema de pago y la gestión de incidencias.
 
-Indicados dentro del enunciado del examen.
+- **Persona:** Representa a las personas dentro del sistema, dividiéndose en dos roles principales:
 
-## Entrega del examen
+    - **Pasajero:** Usa los vehículos y paga por el servicio.
 
-En el repositorio destinado para tal fin en el examen.
+    - **Conductor:** Opera los vehículos asignados.
 
-### Artefactos
+- **Flota:** Es el conjunto de vehículos que presta el servicio, cada uno asignado a una ruta específica.
 
-A continuación una lista de artefactos que habitualmente constituyen la entrega de un examen:
+- **Ruta:** Representa el recorrido que siguen los vehículos, incluyendo sus paradas y horarios.
 
-||||
-|-|-|-|
-|1|Archivo **README.md**|**Este archivo**, sobreescrito con su presentación de la propuesta de solución al examen.|
-|2|Código fuente|Proyecto ordenado dentro de la carpeta `/src`.|
-|3|Diagramas UML|Archivos fuente en la carpeta `/modelosUML`.|
-| ||Diagramas exportados en formato .svg en la carpeta `/images`. |
-|4|Imágenes|Si considera necesario incluir imágenes además de los diagramas, deben alojarse en la carpeta `/images` y estar referenciadas en el documento de entrega.|
-| ||Para diagramas use el formato .svg y para imágenes comunes, el formato .png.|
-|5|Documentación adicional|En la carpeta `/documents`.|
+- **Sistema de Pago:** Se encarga de la gestión de tarifas y abonos para los pasajeros, asegurando un mecanismo eficiente para acceder al servicio.
 
-### Qué se debe entregar
+- **Tarifa:** Define el costo del servicio que los pasajeros deben pagar. Puede variar según diferentes criterios, como el tipo de tarifa (normal, reducida, etc.).
 
-- Los artefactos a entregar se indican en el examen de modo específico. Se especificará cuales son obligatorios.
-- Usted tiene la libertad de decidir si incluir o no los elementos que no sean explícitamente requeridos en el enunciado del examen. Su inclusión es facultativa y debe basarse en su criterio sobre la relevancia o aporte que estos elementos puedan tener para el trabajo presentado.
-- Todos los artefactos han de quedar adecuadamente relacionados desde el artefacto 1.
+- **Abono:** Representa un tipo de pago que permite a los pasajeros utilizar el servicio de manera continua durante un periodo determinado, como un abono mensual.
 
-## Se valorará
+- **Vehículo:** Son los medios de transporte que forman parte de la flota, cada uno con características específicas (por ejemplo, buses eléctricos, híbridos, etc.). Los vehículos se asignan a rutas y son conducidos por los conductores.
 
-- Proceso de creación.
-- Exactitud en la solución.
-- Adecuado reparto de responsabilidades.
-- Código limpio.
-- Claridad del código.
-- Gestión de estados.
-- Y, por supuesto, el uso de los temas vistos en clase.
+- **Parada:** Son los puntos a lo largo de una ruta donde los vehículos realizan paradas para recoger o dejar pasajeros.
 
-### Se propone/sugiere
+- **Horario:** Define las horas de salida y llegada de los vehículos en cada ruta, pudiendo estar sujetos a variaciones, como horarios de verano.
 
-|||
-|-|-|
-|Planificación| Planifique su enfoque utilizando diagramas, esquemas, estados y/o pseudocódigo. Lo puede aportar en su repo, como diagrama o como imagen (foto), en la carpeta adecuada y enlazado desde el README.md|
-|Documentación|En dicho README.md puede explicar cómo cada parte contribuye a la solución general. Y como hemos debatido ampliamente, evite los comentarios a su código: ¡que el código se autoexplique!.|
-|Delegación de responsabilidades|Dedíquele un momento a reflexionar sobre cómo reparte las responsabilidades entre los diferentes artefactos y cómo esto afecta la claridad y eficiencia de su solución.|
+- **GestionDeIncidencias:** Este componente gestiona los problemas y situaciones imprevistas que pueden surgir durante la operación del servicio, como accidentes o condiciones adversas. La gestión de incidencias afecta a la planificación de las rutas y la disponibilidad de los vehículos.
+
+- **Incidencia:** Representa los eventos o situaciones imprevistas que afectan el servicio, como una "Calle Cerrada", lo que obliga a modificar la ruta habitual de un vehículo.
+
+
+
+## 1. Fotos Originales del Examen
+
+Aquí se presentan las fotos de las hojas originales del examen en las que se diseñó el modelo de dominio. [Ver examen](images/ExamenParcial/README.md) |
+
+---
+
+## 2. Diagramas Originales 
+
+
+| Diagrama | Código PlantUML |
+|----------|------------------|
+| ![Diagrama de Clases Original](images/modelosUML/DdC_Original.svg) | [Ver código](modelosUML/DdC_Original.puml) |
+| ![Diagrama de Objetos Original](images/modelosUML/DdO_Original.svg) | [Ver código](modelosUML/DdO_Original.puml) |
+| ![Diagrama de Estados Pasajero Original](images/modelosUML/DdE_Pasajero_Original.svg) | [Ver código](modelosUML/DdE_Pasajero_Original.puml) |
+| ![Diagrama de Estados Conductor Original](images/modelosUML/DdE_Conductor_Original.svg) | [Ver código](modelosUML/DdE_Conductor_Original.puml) |
+| ![Diagrama de Estados Vehiculo Original](images/modelosUML/DdE_Vehiculo_Original.svg) | [Ver código](modelosUML/DdE_Vehiculo_Original.puml) 
+
+---
+
+## 3. Diagramas Iterados y Mejorados
+
+
+| Diagrama Mejorado | Código PlantUML |
+|--------------------|------------------|
+| ![Diagrama de Clases Mejorado](images/modelosUML/DdC_Mejorado.svg) | [Ver código](modelosUML/DdC_Mejorado.puml) |
+| ![Diagrama de Objetos Mejorado](images/modelosUML/DdO_Mejorado.svg) | [Ver código](modelosUML/DdO_Mejorado.puml) |
+| ![Diagrama de Estados Pasajero Mejorado](images/modelosUML/DdE_Pasajero_Mejorado.svg) | [Ver código](modelosUML/DdE_Pasajero_Mejorado.puml) |
+| ![Diagrama de Estados Conductor Mejorado](images/modelosUML/DdE_Conductor_Mejorado.svg) | [Ver código](modelosUML/DdE_Conductor_Mejorado.puml) |
+| ![Diagrama de Estados Vehiculo Mejorado](images/modelosUML/DdE_Vehiculo_Mejorado.svg) | [Ver código](modelosUML/DdE_Vehiculo_Mejorado.puml) 
+
+---
+
+

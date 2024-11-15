@@ -1,0 +1,13 @@
+@startuml
+title Diagrama de Estados - Vehículo
+
+[*] --> EnEstacion
+EnEstacion --> SaleDeLaEstacion : Inicio de operación
+SaleDeLaEstacion --> EnRuta : Se dirige a la primera parada
+EnRuta --> ParaEnParada : Llega a una parada
+ParaEnParada --> EnRuta : Continúa hacia la siguiente parada
+EnRuta --> CompletaRuta : Termina recorrido
+CompletaRuta --> VuelveAEstacion : Regresa a la estación
+VuelveAEstacion --> EnEstacion : Fin de operación
+
+@enduml

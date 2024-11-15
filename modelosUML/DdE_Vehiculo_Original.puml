@@ -1,0 +1,19 @@
+@startuml
+title Diagrama de Estados - Vehiculo
+
+[*] --> SaleDeLaEstacion
+
+SaleDeLaEstacion --> VeEnDireccionParada 
+
+VeEnDireccionParada  --> Para 
+
+Para --> RecibePasajeros 
+
+RecibePasajeros --> SaleDeLaParada 
+
+SaleDeLaParada --> VeEnDireccionParada
+SaleDeLaParada --> VuelveAEstacion
+
+VuelveAEstacion --> [*]
+
+@enduml
